@@ -127,4 +127,6 @@
     <disable_collisions link1="fr3_link6_sc" link2="fr3_link7" reason="Always"/>
     <disable_collisions link1="fr3_link6_sc" link2="fr3_link7_sc" reason="Default"/>
     <disable_collisions link1="fr3_link7" link2="fr3_link7_sc" reason="Adjacent"/>
+    <disable_collisions link1="fr3_link7" link2="fr3_link_pip" reason="Adjacent"/>
+    <disable_collisions link1="fr3_link7_sc" link2="fr3_link_pip" reason="Adjacent"/>
 </robot>

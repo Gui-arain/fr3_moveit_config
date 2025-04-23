@@ -515,26 +515,59 @@
         <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.6895" soft_upper_limit="2.6895" />
         <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16" />
     </joint>
+    
     <link name="fr3_link_pip" >
         <visual>
             <geometry>
                 <mesh filename="package://fr3_moveit_config/meshes/visual/link_pip.dae" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://fr3_moveit_config/meshes/collision/link_pip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
         <inertial>
             <mass value="0.3" />
             <origin xyz="0.05 0 0" rpy="0 0 0" />
             <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
         </inertial>
     </link>
+
+    <!-- sub-link defining coarse geometries of real robot's internal self-collision -->
+    <!-- <link name="fr3_link_pip_sc">
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 -0.1" />
+            <geometry>
+                <cylinder length="0.2" radius="0.032" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin rpy="0  0" xyz="0 0 0.0365" />
+            <geometry>
+                <cylinder length="0.073" radius="0.0015" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.3" />
+            <origin xyz="0.05 0 0" rpy="0 0 0" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
+    
+    <joint name="fr3_link_pip_sc_joint" type="fixed">
+        <origin xyz="0 -0.083 0.069" rpy="0 0 0" />
+        <parent link="fr3_link_pip" />
+        <child link="fr3_link_pip_sc" />
+    </joint>  -->
+    
     <joint name="fr3_joint8" type="fixed">
-        <origin rpy="0 0 0.785" xyz="0 0 0.107" /> <!-- xyz="0 0 0.107" -->
+        <origin rpy="0 0 0.7853981633974483" xyz="0 0 0.107" /> <!-- xyz="0 0 0.107" -->
         <parent link="fr3_link7" />
         <child link="fr3_link_pip" />
     </joint>
     
-
-
+    
     <transmission name="trans_fr3_joint1">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="fr3_joint1">
