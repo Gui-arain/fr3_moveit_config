@@ -567,7 +567,15 @@
         <child link="fr3_link_pip" />
     </joint>
     
+    <link name="fr3_link_pip_tip" >
+    </link>
     
+    <joint name="fr3_joint9" type="fixed">
+        <origin rpy="0 0 0" xyz="0 -0.083 0.147997" /> <!-- xyz="0 0 0.107" -->
+        <parent link="fr3_link_pip" />
+        <child link="fr3_link_pip_tip" />
+    </joint>
+
     <transmission name="trans_fr3_joint1">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="fr3_joint1">
