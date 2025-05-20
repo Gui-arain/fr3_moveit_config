@@ -571,7 +571,7 @@
     </link>
     
     <joint name="fr3_joint9" type="fixed">
-        <origin rpy="0 0 0" xyz="0 -0.083 0.147997" /> <!-- xyz="0 0 0.107" -->
+        <origin rpy="3.14 0 0" xyz="0 -0.083 0.147997" /> <!-- xyz="0 0 0.107" -->
         <parent link="fr3_link_pip" />
         <child link="fr3_link_pip_tip" />
     </joint>
